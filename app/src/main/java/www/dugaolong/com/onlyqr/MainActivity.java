@@ -95,7 +95,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //生成二维码
     public void Create2QR(View v){
         String uri = resultTv.getText().toString();
-//      Bitmap bitmap = BitmapUtil.create2DCoderBitmap(uri, mScreenWidth/2, mScreenWidth/2);
         Bitmap bitmap;
         try {
             bitmap = BitmapUtil.createQRCode(uri, mScreenWidth);
