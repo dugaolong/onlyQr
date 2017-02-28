@@ -78,7 +78,7 @@ public class BitmapUtil {
 		Hashtable<EncodeHintType, String> hints = new Hashtable<EncodeHintType, String>();
 		hints.put(EncodeHintType.CHARACTER_SET, "utf-8");
 		BitMatrix matrix = new MultiFormatWriter().encode(str,
-				BarcodeFormat.QR_CODE, widthAndHeight, widthAndHeight);
+				BarcodeFormat.QR_CODE, widthAndHeight, widthAndHeight,hints);
 		int width = matrix.getWidth();
 		int height = matrix.getHeight();
 		int[] pixels = new int[width * height];

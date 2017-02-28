@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,10 +18,12 @@ import com.google.zxing.WriterException;
 
 import www.dugaolong.com.onlyqr.zxing.android.CaptureActivity;
 
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener,View.OnLongClickListener {
 
     private Button scanBtn;
-    private TextView resultTv,desc;
+    private EditText resultTv;
+    private TextView desc;
     private static final String DECODED_CONTENT_KEY = "codedContent";
     private static final String DECODED_BITMAP_KEY = "codedBitmap";
     protected int mScreenWidth ;
@@ -40,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initView() {
         scanBtn = (Button) findViewById(R.id.scanBtn);
-        resultTv = (TextView) findViewById(R.id.resultTv);
+        resultTv = (EditText) findViewById(R.id.resultTv);
         desc = (TextView) findViewById(R.id.desc);
         iv_qr_image = (ImageView) findViewById(R.id.iv_qr_image);
         scanBtn.setOnClickListener(this);
