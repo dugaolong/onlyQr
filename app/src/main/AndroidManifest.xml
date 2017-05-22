@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="www.dugaolong.com.onlyqr">
+    package="com.dgl.www.onlyqr">
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -13,7 +13,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.dgl.www.onlyqr.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".zxing.android.CaptureActivity"
+            android:name="com.dgl.www.onlyqr.zxing.android.CaptureActivity"
             android:theme="@android:style/Theme.NoTitleBar"
             android:screenOrientation="portrait" >
         </activity>

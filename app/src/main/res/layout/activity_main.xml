@@ -5,44 +5,62 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/white">
 
     <Button
-        android:layout_margin="18dp"
+        android:layout_margin="8dp"
         android:id="@+id/scanBtn"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="扫描二维码" />
 
-    <TextView
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:layout_margin="8dp"
-        android:text="(长按可复制扫描结果)"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+    <!--<TextView-->
+        <!--android:layout_gravity="center"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_margin="8dp"-->
+        <!--android:text="(长按可复制扫描结果)"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content" />-->
 
     <TextView
         android:text="扫描结果:"
         android:id="@+id/desc"
-        android:layout_marginLeft="18dp"
+        android:layout_marginLeft="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="gone"/>
 
-    <EditText
-        android:layout_margin="18dp"
-        android:id="@+id/resultTv"
+
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/resultTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="8dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:onClick="copyStr"
+            android:text="复制结果" />
+
+    </LinearLayout>
+
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:onClick="Create2QR"
-        android:text="生成二维码"
-        android:layout_margin="18dp"/>
+        android:text="根据填写的内容生成二维码"
+        android:layout_margin="8dp"/>
 
     <ImageView
         android:id="@+id/iv_qr_image"
