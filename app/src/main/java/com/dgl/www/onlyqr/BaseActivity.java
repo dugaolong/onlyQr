@@ -23,6 +23,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import cn.waps.AppConnect;
+
 /**
  * activity基类
  */
@@ -40,6 +42,8 @@ public abstract class BaseActivity extends AppCompatActivity
     protected int screenHeight;
 
     private Toast mToast;
+    private static final String APP_ID = "c1ce3658532d77e1d82d6fb947581cc5";
+    private static final String APP_PID = "default";
 
     /**
      * 标题栏标题
@@ -120,6 +124,9 @@ public abstract class BaseActivity extends AppCompatActivity
 
         super.setContentView(R.layout.activity_base_layout);
         this.init();
+
+        AppConnect.getInstance(APP_ID,APP_PID,this).initPopAd(this);
+        AppConnect.getInstance(this).showPopAd(this);
     }
 
     /**
@@ -179,7 +186,7 @@ public abstract class BaseActivity extends AppCompatActivity
     @Override
     protected void onDestroy() {
         super.onDestroy();
-//        OkHttpProxy.cancel(OkHttpManager.getInstance());
+        AppConnect.getInstance(this).close();
         // 结束Activity&从堆栈中移除
         ActivityManager.getAppManager().finishActivity(this);
     }
