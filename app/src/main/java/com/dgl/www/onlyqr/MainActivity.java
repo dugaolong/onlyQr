@@ -136,5 +136,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener,V
         showToast("已复制结果到粘贴板");
     }
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        finishAll();
+    }
 }
